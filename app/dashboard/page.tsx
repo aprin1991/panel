@@ -16,7 +16,7 @@ const DashbparPage = () => {
           <Transactions />
           <Chart />
         </div>
-        <div className="w-1/4">
+        <div className="w-1/4 sticky top-0">
           <Rightbar />
         </div>
       </div>
