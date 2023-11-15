@@ -78,7 +78,7 @@ const menuItems = [
 
 export const Sidebar = () => {
   return (
-    <div className="w-1/6 h-screen sticky top-0 bg-slate-900 p-4 rounded-md">
+    <div className="w-1/6 h-screen sticky top-0 bg-slate-900 p-4 rounded-md sidebar">
       <figure className="flex justify-start items-center gap-4 mb-4">
         <Image
           className="w-12 h-12 rounded-full"

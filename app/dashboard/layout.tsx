@@ -11,7 +11,7 @@ const Layout = ({ children }: Props) => {
   return (
     <div className="flex">
       <Sidebar />
-      <div className=" min-h-screen flex-grow flex flex-col py-5 p-4">
+      <div className=" min-h-screen w-5/6 flex flex-col py-5 p-4">
         <Navbar />
         {children}
       </div>
