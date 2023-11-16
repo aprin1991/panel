@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { ChangeEvent, useState } from "react";
 import { MdSearch } from "react-icons/md";
 
@@ -21,9 +22,12 @@ const ProductsTop = () => {
           onChange={handleChangeSearch}
         />
       </div>
-      <button className="bg-indigo-700 text-sm text-color py-2 px-4 rounded-md">
+      <Link
+        href="/dashboard/products/add"
+        className="bg-indigo-700 text-sm text-color py-2 px-4 rounded-md"
+      >
         Add New
-      </button>
+      </Link>
     </div>
   );
 };

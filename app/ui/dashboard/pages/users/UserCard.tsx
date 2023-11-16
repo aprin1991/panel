@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const UserCard = () => {
   return (
@@ -21,9 +22,12 @@ const UserCard = () => {
       <td className="p-3">Passive</td>
       <td className="p-3">
         <div className="flex justify-center items-center gap-3">
-          <button className="p-1 px-3 text-white text-xs bg-green-700 rounded-md">
+          <Link
+            href={`/dashboard/users/123456789`}
+            className="p-1 px-3 text-white text-xs bg-green-700 rounded-md"
+          >
             View
-          </button>
+          </Link>
           <button className="p-1 px-3 text-white text-xs bg-red-700 rounded-md">
             Delete
           </button>

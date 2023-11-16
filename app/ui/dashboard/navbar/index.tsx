@@ -6,7 +6,7 @@ const Navbar = () => {
   const path = usePathname();
   return (
     <div className="bg-slate-900 p-4 w-full rounded-md flex justify-between items-center mb-4">
-      <h1 className="font-bold text-lg">{path.split("/").pop()}</h1>
+      <h1 className="font-bold text-lg uppercase">{path.split("/").pop()}</h1>
       <HeaderOperations />
     </div>
   );
