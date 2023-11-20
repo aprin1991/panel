@@ -1,12 +1,23 @@
 "use client";
 import Link from "next/link";
-import { ChangeEvent, useState } from "react";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
+
+import { ChangeEvent } from "react";
 import { MdSearch } from "react-icons/md";
 
 const UsersTop = () => {
-  const [search, setSearch] = useState("");
+  const searchParam = useSearchParams();
+  const { replace } = useRouter();
+  const pathName = usePathname();
+
   const handleChangeSearch = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
+    const params = new URLSearchParams(searchParam);
+    if (e.target.value) {
+      params.set("q", e.target.value);
+    } else {
+      params.delete("q");
+    }
+    replace(`${pathName}?${params}`);
   };
   return (
     <div className="flex justify-between items-center mb-5">
@@ -18,7 +29,6 @@ const UsersTop = () => {
           className="w-64 p-2 bg-slate-800 rounded-md text-sky-950 text-sm text-white"
           type="text"
           placeholder="Search ..."
-          value={search}
           onChange={handleChangeSearch}
         />
       </div>

@@ -32,7 +32,7 @@ const UserPage = () => {
 
   return (
     <div className="flex justify-start items-start gap-6">
-      <div className="p-4 w-64  bg-slate-900">
+      <div className="p-4 w-64 bg-slate-900">
         <Image src="/noavatar.png" alt="user" width={250} height={250} />
       </div>
       <div className="p-4 bg-slate-900 flex-grow">

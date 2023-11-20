@@ -1,6 +1,11 @@
+import { IUser } from "@/app/lib/types";
 import UserCard from "./UserCard";
+import { FC } from "react";
+type Props = {
+  users: IUser[];
+};
 
-const UsersBody = () => {
+const UsersBody: FC<Props> = ({ users }) => {
   return (
     <div>
       <table className="w-full">
@@ -15,11 +20,9 @@ const UsersBody = () => {
           </tr>
         </thead>
         <tbody>
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
+          {users.map((user) => (
+            <UserCard key={user.id} user={user} />
+          ))}
         </tbody>
       </table>
     </div>

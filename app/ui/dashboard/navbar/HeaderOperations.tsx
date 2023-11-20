@@ -19,7 +19,7 @@ const HeaderOperations = () => {
           <MdSearch />
         </div>
         <input
-          className="w-64 p-2 bg-slate-800 rounded-md text-sky-950 text-sm"
+          className="w-64 p-2 bg-slate-800 rounded-md text-white text-sm"
           type="text"
           placeholder="Search ..."
           value={search}
