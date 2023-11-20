@@ -4,21 +4,25 @@ import { usePathname, useSearchParams, useRouter } from "next/navigation";
 
 import { ChangeEvent } from "react";
 import { MdSearch } from "react-icons/md";
+import { useDebouncedCallback } from "use-debounce";
 
 const UsersTop = () => {
   const searchParam = useSearchParams();
   const { replace } = useRouter();
   const pathName = usePathname();
 
-  const handleChangeSearch = (e: ChangeEvent<HTMLInputElement>) => {
-    const params = new URLSearchParams(searchParam);
-    if (e.target.value) {
-      params.set("q", e.target.value);
-    } else {
-      params.delete("q");
-    }
-    replace(`${pathName}?${params}`);
-  };
+  const handleChangeSearch = useDebouncedCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      const params = new URLSearchParams(searchParam);
+      if (e.target.value) {
+        e.target.value.length > 2 && params.set("q", e.target.value);
+      } else {
+        params.delete("q");
+      }
+      replace(`${pathName}?${params}`);
+    },
+    300
+  );
   return (
     <div className="flex justify-between items-center mb-5">
       <div className="relative">
